@@ -44,6 +44,7 @@ public class Day03_LocatorsGiris {
         SignInButonu.click();
 
         // sayfanin basliini alalim
+        String baslik = driver.getTitle();
         if(baslik.equals("Address Book")){
             System.out.println("Giriş Başarılı.");
         }else{
