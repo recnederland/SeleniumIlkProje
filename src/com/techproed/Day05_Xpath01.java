@@ -7,26 +7,26 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Day04_GoogleTest {
+public class Day05_Xpath01 {
     public static void main(String[] args) {
+
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\sam s\\Documents\\selenium dependencies\\drivers\\chromedriver.exe");
         WebDriver driver =new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        driver.get("http://a.testaddressbook.com/sign_in");
 
-        driver.get("http://google.com");
-        WebElement aramaKutusu = driver.findElement(By.name("q"));
-        // sendkeys ile arama kutusuna birsey yazabiliriz
-        aramaKutusu.sendKeys("city bike");
-        // submit enter gorevi gorur
-        aramaKutusu.submit();
+        //input[@type='email'] -> xpathimiz
+        WebElement emailKutusu = driver.findElement(By.xpath("//input[@type='email']"));
+        emailKutusu.sendKeys("testtechproed@gmail.com");
 
-        WebElement sonucSayisi = driver.findElement(By.id("results stads"));
-        System.out.println(sonucSayisi.getText());
+        WebElement sifreKutusu = driver.findElement(By.xpath("//input[@type='password']"));
+        sifreKutusu.sendKeys("Test1234!");
 
-        WebElement alisverisLinki = driver.findElement(By.partialLinkText("Alışveriş"));
-        alisverisLinki.click();
+        WebElement signInButonu = driver.findElement(By.xpath("//input[@type='submit']"));
+        signInButonu.click();
 
 
     }
+
 }
