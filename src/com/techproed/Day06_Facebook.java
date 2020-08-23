@@ -29,19 +29,22 @@ public class Day06_Facebook {
         WebElement sifreKutusu = driver.findElement(By.xpath("//*[@type=\"password\"]"));
         sifreKutusu.sendKeys("Test1234");
 
+        sifreKutusu.submit();
+
+
         // 3. adim login butonunu bulalim
         // ._42ft   ya da #u_0_d"
         //WebElement loginButonu = driver.findElement(By.id("u_0_b"));
         //WebElement loginButonu = driver.findElement(By.cssSelector("#u_0_d"));
-        WebElement loginButonu = driver.findElement(By.xpath("//button"));
-        loginButonu.click();
+        //WebElement loginButonu = driver.findElement(By.xpath("//button"));
+        //loginButonu.click();
         //<button value="1" class="_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy" 
         // name="login"
         //data-testid="royal_login_button" type="submit" id="u_0_d">Giriş Yap</button>
 
         // Burada java 3000 milisaniye bekleyecek
         try {
-            Thread.sleep(25000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
